@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
     public bool onGround;
     public float moveSpeed = 4;
     public float jumpHeight = 2;
+    public LayerMask layerMask = 0;
 
     private void Start()
     {
@@ -14,6 +15,10 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        var hit = Physics2D.Raycast(transform.position, Vector2.down, 0.6f, layerMask);
+        onGround = hit.collider != null;
+
+
         if (Input.GetKeyDown(KeyCode.Space) && onGround)
         {
             var speed = Mathf.Sqrt(jumpHeight * -rb.gravityScale * Physics2D.gravity.y * 2);
@@ -22,15 +27,5 @@ public class Player : MonoBehaviour
         }
 
         rb.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * moveSpeed, rb.velocity.y);
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        onGround = true;
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        onGround = false;
     }
 }

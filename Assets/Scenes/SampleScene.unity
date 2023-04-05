@@ -303,7 +303,7 @@ GameObject:
   - component: {fileID: 845291263}
   - component: {fileID: 845291262}
   - component: {fileID: 845291261}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ground sample (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -520,7 +520,7 @@ GameObject:
   - component: {fileID: 1205891152}
   - component: {fileID: 1205891151}
   - component: {fileID: 1205891150}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ground sample (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -653,7 +653,7 @@ GameObject:
   - component: {fileID: 1310892041}
   - component: {fileID: 1310892040}
   - component: {fileID: 1310892039}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ground sample (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -786,7 +786,7 @@ GameObject:
   - component: {fileID: 1393398759}
   - component: {fileID: 1393398758}
   - component: {fileID: 1393398757}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ground sample
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -920,7 +920,7 @@ GameObject:
   - component: {fileID: 1498350214}
   - component: {fileID: 1498350213}
   - component: {fileID: 1498350215}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1004,7 +1004,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1498350210}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 1d8ae165c0226fe4298c27a9ab2129bf, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -1040,7 +1040,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &1498350215
 MonoBehaviour:
@@ -1056,4 +1056,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onGround: 0
   moveSpeed: 5
-  jumpHeight: 2
+  jumpHeight: 3
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 64
