@@ -3,6 +3,8 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     Rigidbody2D rb;
+    SpriteRenderer sprite;
+    BoxCollider2D boxColl;
     public bool onGround;
     public float moveSpeed = 4;
     public float jumpHeight = 2;
@@ -11,11 +13,14 @@ public class Player : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        sprite = GetComponent<SpriteRenderer>();
+        boxColl = GetComponent<BoxCollider2D>();
     }
 
     private void Update()
     {
-        var hit = Physics2D.Raycast(transform.position, Vector2.down, 0.6f, layerMask);
+        //var hit = Physics2D.Raycast(transform.position, Vector2.down, 0.6f, layerMask);
+        var hit = Physics2D.BoxCast(boxColl.bounds.center, boxColl.bounds.size, 0f, Vector2.down, 0.1f, layerMask);
         onGround = hit.collider != null;
 
 
@@ -26,6 +31,12 @@ public class Player : MonoBehaviour
             onGround = false;
         }
 
-        rb.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * moveSpeed, rb.velocity.y);
+        var h = Input.GetAxisRaw("Horizontal");
+        rb.velocity = new Vector2(h * moveSpeed, rb.velocity.y);
+
+        if (h != 0)
+        {
+            sprite.flipX = h < 0;
+        }
     }
 }
