@@ -804,6 +804,7 @@ GameObject:
   m_Component:
   - component: {fileID: 281104272}
   - component: {fileID: 281104273}
+  - component: {fileID: 281104274}
   m_Layer: 0
   m_Name: Sky Back
   m_TagString: Untagged
@@ -878,6 +879,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &281104274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 281104271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fd8eb4d18849eb459d2108ca8d7044f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.9
 --- !u!1 &283428517
 GameObject:
   m_ObjectHideFlags: 0
@@ -10152,6 +10166,7 @@ GameObject:
   m_Component:
   - component: {fileID: 327338202}
   - component: {fileID: 327338203}
+  - component: {fileID: 327338204}
   m_Layer: 0
   m_Name: Sky Mid
   m_TagString: Untagged
@@ -10226,6 +10241,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &327338204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 327338201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fd8eb4d18849eb459d2108ca8d7044f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.7
 --- !u!1001 &328757498
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12658,6 +12686,7 @@ GameObject:
   - component: {fileID: 1425213514}
   - component: {fileID: 1425213513}
   - component: {fileID: 1425213512}
+  - component: {fileID: 1425213515}
   m_Layer: 0
   m_Name: Teleporter
   m_TagString: Teleporter
@@ -12723,7 +12752,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
-  m_Color: {r: 0.5188679, g: 0.13950694, b: 0.51173836, a: 1}
+  m_Color: {r: 0.754717, g: 0.18155926, b: 0.7427761, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -12748,6 +12777,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1425213515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425213511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6165e665dc09a84c8b10a1771fadc32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCollector: {fileID: 1498350216}
+  nextLevelSceneNumber: 1
 --- !u!1001 &1438243579
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22337,7 +22380,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1721601493}
-  - component: {fileID: 1721601494}
   m_Layer: 0
   m_Name: Sky Background
   m_TagString: Untagged
@@ -22363,19 +22405,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 70
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1721601494
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1721601492}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fd8eb4d18849eb459d2108ca8d7044f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0.9
 --- !u!1001 &1740642420
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22565,6 +22594,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1845493702}
   - component: {fileID: 1845493703}
+  - component: {fileID: 1845493704}
   m_Layer: 0
   m_Name: Sky Front
   m_TagString: Untagged
@@ -22639,6 +22669,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1845493704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1845493701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fd8eb4d18849eb459d2108ca8d7044f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.5
 --- !u!1001 &1886094441
 PrefabInstance:
   m_ObjectHideFlags: 0
