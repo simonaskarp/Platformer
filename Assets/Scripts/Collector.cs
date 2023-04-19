@@ -5,6 +5,8 @@ public class Collector : MonoBehaviour
 {
     public float coins = 0;
     public TMP_Text coinText;
+    //public int coinsToTeleport = 3;
+    //public GameObject teleporter;
 
     private void Start()
     {
@@ -17,6 +19,10 @@ public class Collector : MonoBehaviour
         {
             coins++;
             coinText.text = coins.ToString();
+            /*if (coins >= coinsToTeleport)
+            {
+                teleporter.SetActive(true);
+            }*/
             Destroy(collision.gameObject);
         }
     }

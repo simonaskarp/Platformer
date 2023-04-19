@@ -4,12 +4,13 @@ using UnityEngine.SceneManagement;
 public class Teleporter : MonoBehaviour
 {
     public Collector playerCollector;
-    public int nextLevelSceneNumber;
+    public int coinsToTeleport = 3;
     CapsuleCollider2D coll;
     SpriteRenderer sprite;
 
     void Start()
     {
+        //gameObject.SetActive(false);
         coll = GetComponent<CapsuleCollider2D>();
         sprite = GetComponent<SpriteRenderer>();
         coll.enabled = false;
@@ -19,15 +20,10 @@ public class Teleporter : MonoBehaviour
     
     void Update()
     {
-        if(playerCollector.coins == 3)
+        if(playerCollector.coins >= coinsToTeleport)
         {
             coll.enabled = true;
             sprite.enabled = true;
         }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        SceneManager.LoadScene(nextLevelSceneNumber);
     }
 }
