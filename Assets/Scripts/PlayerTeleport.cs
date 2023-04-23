@@ -6,6 +6,7 @@ public class PlayerTeleport : MonoBehaviour
     SpriteRenderer sprite;
     public float teleportTime = 1;
     public float teleportTimeLeft;
+    public string nextLevel;
 
     private void Start()
     {
@@ -25,7 +26,7 @@ public class PlayerTeleport : MonoBehaviour
         teleportTimeLeft -= Time.deltaTime;
         if (teleportTimeLeft <= 0)
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(nextLevel);
         }
     }
 
