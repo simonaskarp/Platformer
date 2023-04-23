@@ -7,6 +7,7 @@ public class PlayerTeleport : MonoBehaviour
     public float teleportTime = 1;
     public float teleportTimeLeft;
     public string nextLevel;
+    public AudioSource teleportSound;
 
     private void Start()
     {
@@ -27,6 +28,14 @@ public class PlayerTeleport : MonoBehaviour
         if (teleportTimeLeft <= 0)
         {
             SceneManager.LoadScene(nextLevel);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Teleporter"))
+        {
+            teleportSound.Play();
         }
     }
 

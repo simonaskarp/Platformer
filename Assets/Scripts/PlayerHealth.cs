@@ -8,6 +8,7 @@ public class PlayerHealth : MonoBehaviour
     public Transform startPos;
     public float resetOnHeight = -10;
     public TMP_Text healthText;
+    public AudioSource deathSound;
 
     private void Start()
     {
@@ -32,6 +33,7 @@ public class PlayerHealth : MonoBehaviour
         if (!collision.gameObject.CompareTag("Enemy")) return;
 
         health--;
+        deathSound.Play();
         gameObject.transform.position = startPos.position;
         healthText.text = health.ToString();
     }

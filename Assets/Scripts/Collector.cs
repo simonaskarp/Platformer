@@ -7,6 +7,7 @@ public class Collector : MonoBehaviour
     public TMP_Text coinText;
     //public int coinsToTeleport = 3;
     //public GameObject teleporter;
+    public AudioSource coinSound;
 
     private void Start()
     {
@@ -19,6 +20,7 @@ public class Collector : MonoBehaviour
         {
             coins++;
             coinText.text = coins.ToString();
+            coinSound.Play();
             /*if (coins >= coinsToTeleport)
             {
                 teleporter.SetActive(true);

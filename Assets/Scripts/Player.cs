@@ -10,6 +10,8 @@ public class Player : MonoBehaviour
     public float moveSpeed = 4;
     public float jumpHeight = 2;
     public LayerMask layerMask = 0;
+    public AudioSource jumpSound;
+    public AudioSource landingSound;
 
     private void Start()
     {
@@ -23,12 +25,17 @@ public class Player : MonoBehaviour
         //var hit = Physics2D.Raycast(transform.position, Vector2.down, 0.6f, layerMask);
         var hit = Physics2D.BoxCast(boxColl.bounds.center, boxColl.bounds.size, 0f, Vector2.down, 0.1f, layerMask);
         onGround = hit.collider != null;
+        if (!onGround)
+        {
+            landingSound.Play();
+        }
 
 
         if (Input.GetKeyDown(KeyCode.Space) && onGround)
         {
             var speed = Mathf.Sqrt(jumpHeight * -rb.gravityScale * Physics2D.gravity.y * 2);
             rb.velocity = Vector2.up * speed;
+            jumpSound.Play();
             onGround = false;
         }
 
